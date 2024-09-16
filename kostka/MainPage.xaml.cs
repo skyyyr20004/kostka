@@ -1,4 +1,5 @@
-﻿namespace kostka
+﻿
+namespace kostka
 {
     public partial class MainPage : ContentPage
     {
@@ -11,12 +12,10 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            Random r = new Random();
+            int diceRoll = r.Next(1, 7);
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            CounterBtn.Text = "Wysolowany rzut: " + diceRoll.ToString();
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
